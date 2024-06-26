@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="icon" href="favicon/favicon/" type="image/x-icon">
+
+    <script src="scripts/dice.js" defer></script>
+</head>
+<body id="body">
+    <div id="wrapper">
+        <main>
+            <!--Game Menu-->
+            <div id="home-screen" class="containers">
+                <button id="new-game">New Game</button>
+            </div>
+
+            <!--Narrator Popup-->
+            <div id="narrator-popup" class="containers">
+                <img src="images/gangsters/boss-narrator.jpg" alt="Narrator" id="narratorImage">
+                <p id="narrator-message">Placeholder Text</p>
+                <div id="narrator-buttons">
+                    <button id="narratorBtn1">Next</button>
+                    <button id="narratorBtn2">Quit</button>
+                </div>
+            </div>
+
+
+            <!--Game Container-->
+            <div id="play-container" class="containers">
+                <div id="player-section">
+                    <h2 id="player-name">Player</h2>
+                    <div id="player-image-container">
+                        <img id="player-die-1" src="images/animations/diceRollLarge.gif" alt="Die 1">
+                        <img id="player-die-2" src="images/animations/diceRollLarge.gif" alt="Die 2">
+                    </div>
+                    <p id="player-score">Score: <span>0</span></p>
+                </div>
+
+                <div id="computer-section">
+                    <h2 id="computer">Computer</h2>
+                    <div id="computer-image-container">
+                        <img id="computer-die-1" src="images/animations/diceRollLarge.gif" alt="Die 1">
+                        <img id="computer-die-2" src="images/animations/diceRollLarge.gif" alt="Die 2">
+                    </div>
+                    <p id="computer-score">Score: <span>0</span></p>
+                </div>
+
+                <button id="roll-dice">Roll Dice</button>
+                <button id="quit-game">Exit</button>
+            </div>
+
+            <!--confirm close window-->
+            <div id="confirm-quit-container" class="containers">
+                <div class="confirm-quit-content">
+                    <p>Are you sure you want to quit the game?</p>
+                    <button id="confirm-quit-yes">Yes</button>
+                    <button id="confirm-quit-no">No</button>
+                </div>
+            </div>
+
+        </main>
+    </div>    
+</body>
+</html>

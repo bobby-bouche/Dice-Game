@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* ------ Browser Resets ------ */
+@import url("reset.css");
+
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+$midnight-black: #0D0D0D;
+$gunmetal-gray: #2A2A2A;
+$cigar-brown: #8B4513;
+$whiskey-gold: #D4AF37;
+$deep-red: #7F0000;
+$smoke-white: #F5F5F5;
+
+/* font settings */
+$font-family-primary: 'Merriweather', serif;
+$font-weight-normal: 400;
+$font-weight-bold: 900;
+
+/* font sizing */
+$base-font-size: 0.95rem;
+$heading-font-size: clamp(1.6rem, 2.5vw, 4.5rem);
+
+@mixin button-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    border-radius: 0.5em;
+    padding: 0.25em;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($bg-color, 10%);
+    }
+}
+
+/* body styles */
+body {
+    background-image: url(../images/backgrounds/home.jpg);
+    background-color: $midnight-black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: $base-font-size;
+    font-family: $font-family-primary;
+    font-weight: $font-weight-normal;
+    color: $smoke-white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+
+
+/* wrapper styles */
+#wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+// default container styles
+.containers {
+    background-color: $midnight-black;
+    border: 1px solid $whiskey-gold;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+
+
+/* default button styles */
+button {
+    @include button-style($whiskey-gold, $midnight-black);
+    margin-right: 0.5em;
+  }
+
+
+
+/* home screen styles */
+#home-screen button{
+    padding: 0.25em 1em;
+}
+
+/* Adjusts font size for body on screens (min-width: 1024px) */
+@media (min-width: 1024px) {
+
+    #home-screen {
+        padding: 1.5em 2em;
+    }
+}
+
+
+
+/* confirm quit window styles */
+#confirm-quit-container{
+    display: none;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#confirm-quit-container button{
+    margin-top: 0.75em;
+    padding: 0.25em;
+}
+
+@media(min-width: 1024px){
+
+    #confirm-quit-container{
+        line-height: 1.6em;
+    }
+}
+
+
+
+/* narrator popup styles */
+#narrator-popup {
+    display: none;
+    max-width: 210px;
+    line-height: 1.6em;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#narrator-buttons {
+    display: flex;
+    justify-content: center; 
+    gap: 0.5em; 
+}
+
+#narrator-popup button{
+    display: flex;
+}
+
+#narrator-popup img{
+    margin: 0 auto;
+}
+
+#narrator-popup p{
+    margin-top: 1em;
+}
+
+#narratorBtn1, #narratorBtn2{
+    display: inline-block;
+    padding: 0.25em 1em;
+    margin: 0 0.5em;
+    @include button-style($whiskey-gold, $midnight-black);
+}
+
+/* boss popup styles */
+#boss-encounter {
+    display: none;
+    text-align: center;
+    padding: 2em;
+}
+
+
+/* play container styles */
+#play-container {
+    display: none;
+    max-width: 800px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#play-container h2, #player-score, #computer-score{
+    text-align: center;
+    margin: 1em;
+}
+
+#computer-section h2{
+    margin-top: 2em;
+}
+
+
+
+/* image container styles */
+#player-image-container, #computer-image-container {
+    display: flex;
+    gap: 10px; 
+    border: 2px solid $smoke-white;
+    padding: 1em;
+}
+
+#player-image-container img, #computer-image-container img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* adjust width of dice images with screen over 600px */
+@media(min-width: 600px){
+
+    #player-image-container img, #computer-image-container img {
+        max-width: 90%;
+    }
+}
+
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.show {
+    opacity: 1;
+}

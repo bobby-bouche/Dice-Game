@@ -1,0 +1,44 @@
+/* Author: Rob Newman | COMP 2132 |  Assignment 07 */
+
+
+/* set box sixing and reset default margin and padding */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* set defualt body styles */
+body {
+    min-height: 100vh;
+    line-height: 1.6rem;
+    font-size: 100%;
+}
+
+
+/* make images easier to work with */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-style: none;
+}
+
+
+/* remove default list styles for ul and ol elements */
+ul, ol {
+    list-style: none;
+}
+
+
+/* remove default text decoration for ul and ol anchor tage */
+ul a, ol a {
+    text-decoration: none;
+}
+
+
+/* inherit fonts for inputs and buttons */
+input, button, textarea, select {
+    font: inherit;
+}
