@@ -94,8 +94,24 @@ button {
 
 
 /* home screen styles */
+#home-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #home-screen button{
     padding: 0.25em 1em;
+    margin-bottom: 1em;
+}
+
+@media (min-width: 700px){
+
+    #home-screen{
+        flex-direction: row;
+        margin-right: 1em;
+    }
 }
 
 /* Adjusts font size for body on screens (min-width: 1024px) */
@@ -131,15 +147,32 @@ button {
 
 
 /* narrator popup styles */
-#narrator-popup {
+#narrator-popup, #rules-popup {
     display: none;
-    max-width: 210px;
     line-height: 1.6em;
     box-sizing: border-box;
+}
+
+#narrator-popup{
+    max-width: 210px;
     text-align: center;
 }
 
-#narrator-buttons {
+#rules-popup{
+    padding: 2em;
+}
+
+#rules-popup h2{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#rules-popup li{
+    margin-bottom: 2em;
+    line-height: 1.6em;
+}
+
+#narrator-buttons, #rules-buttons {
     display: flex;
     justify-content: center; 
     gap: 0.5em; 
@@ -153,7 +186,7 @@ button {
     margin: 0 auto;
 }
 
-#narrator-popup p{
+#narrator-popup p, #close-rules{
     margin-top: 1em;
 }
 

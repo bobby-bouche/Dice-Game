@@ -24,7 +24,9 @@ const computerDie2  = document.getElementById("computer-die-2");
 const playerScoreElem   = document.getElementById("player-score");
 const computerScoreElem = document.getElementById("computer-score");
 
-
+const gameRulesBtn  = document.getElementById("game-rules");
+const closeRulesBtn = document.getElementById("close-rules");
+const rulesPopup = document.getElementById("rules-popup");
 
 
 /* game logic section */
@@ -181,6 +183,17 @@ newGameBtn.addEventListener("click", function(){
     showNarratorPopupWithDelay(message, 'Play', startGame);
 })
 
+// house rules popup
+gameRulesBtn.addEventListener("click", function(){
+    homeScreen.style.display = "none";
+    rulesPopup.style.display = "block";
+})
+
+
+closeRulesBtn.addEventListener("click", function(){
+    homeScreen.style.display = "block";
+    rulesPopup.style.display = "none";
+})
 
 function startGame() {
     narratorPopUp.style.display = "none";
